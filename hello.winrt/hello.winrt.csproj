@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>x86;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--<PackageReference Include="Microsoft.Toolkit.Wpf.UI.Controls" Version="6.0.0" />-->
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.19041.1-preview.vb-release" />
+  </ItemGroup>
+
+</Project>
