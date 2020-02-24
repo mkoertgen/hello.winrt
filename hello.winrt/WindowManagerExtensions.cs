@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Stylet;
 
-namespace hello.winrt.Pages.Wifi
+namespace hello.winrt
 {
     internal static class WindowManagerExtensions
     {

@@ -1,5 +1,5 @@
 using System;
-using hello.winrt.Pages.Wifi;
+using Windows.Devices.Geolocation;
 using Stylet;
 
 namespace hello.winrt.Pages.Geo
@@ -8,10 +8,10 @@ namespace hello.winrt.Pages.Geo
     {
         private readonly IWindowManager _windowManager;
         private readonly IGeoService _geoService;
-        private GeoPoint _geoPoint = new GeoPoint();
+        public Geopoint Location { get; set; }
 
-        public double Longitude => _geoPoint.Longitude;
-        public double Latitude => _geoPoint.Latitude;
+        public string FormattedLocation =>
+            $"Lon: {Location?.Position.Longitude}, Lat: {Location?.Position.Latitude}";
 
         public GeoViewModel(IWindowManager windowManager, IGeoService geoService)
         {
@@ -20,11 +20,13 @@ namespace hello.winrt.Pages.Geo
             DisplayName = "Geo";
         }
 
+        public bool CanLocate => _geoService.CanLocate;
         public async void Locate()
         {
             await _windowManager.GuardedAsync(async () =>
             {
-                _geoPoint = await _geoService.Locate();
+                var position = await _geoService.Locate();
+                Location = new Geopoint(position);
             });
         }
 

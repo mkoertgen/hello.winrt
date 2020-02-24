@@ -17,8 +17,10 @@
         <StackPanel Orientation="Horizontal">
             <Button Command="{s:Action Locate}" ToolTip="Locate"
                     Content="{materialDesign:PackIcon MapMarker}"/>
+            <Label Content="{Binding FormattedLocation}"/>
         </StackPanel>
 
-        <controls:MapControl Grid.Row="1" x:Name="MapControl"/>
+        <controls:MapControl Grid.Row="1" x:Name="MapControl"
+                             Center="{Binding Location}"/>
     </Grid>
 </UserControl>
