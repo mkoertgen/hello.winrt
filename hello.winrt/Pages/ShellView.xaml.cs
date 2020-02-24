@@ -1,4 +1,4 @@
-namespace hello.winrt.Views
+﻿namespace hello.winrt.Pages
 {
     public partial class ShellView
     {

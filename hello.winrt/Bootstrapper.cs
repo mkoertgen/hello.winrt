@@ -1,60 +1,23 @@
-using System;
-using System.Collections.Generic;
-using System.Windows;
-using Autofac;
-using Caliburn.Micro;
-using hello.winrt.Models;
-using hello.winrt.Views;
+using hello.winrt.Pages;
+using hello.winrt.Pages.Geo;
+using hello.winrt.Pages.Wifi;
+using Stylet;
+using StyletIoC;
 
 namespace hello.winrt
 {
-    public class Bootstrapper : BootstrapperBase
+    public class Bootstrapper : Bootstrapper<ShellViewModel>
     {
-        private IContainer _container;
-
-        public Bootstrapper()
+        protected override void ConfigureIoC(IStyletIoCBuilder builder)
         {
-            Initialize();
-        }
+            builder.Bind<IWindowManager>().To<WindowManager>().InSingletonScope();
+            builder.Bind<IEventAggregator>().To<EventAggregator>().InSingletonScope();
 
-        protected override void Configure()
-        {
-            var builder = new ContainerBuilder();
-
-            builder.RegisterType<WindowManager>().As<IWindowManager>().SingleInstance();
-            builder.RegisterType<EventAggregator>().As<IEventAggregator>().SingleInstance();
-            builder.RegisterType<MessageService>().As<IMessageService>().SingleInstance();
-
-            builder.RegisterType<ShellViewModel>()
-                .AsSelf()
-                .AsImplementedInterfaces()
-                .SingleInstance();
-
-            // TODO:
-            //builder.RegisterModule<ScenarioModule>();
-
-            _container = builder.Build();
-        }
-
-        protected override void OnStartup(object sender, StartupEventArgs e)
-        {
-            DisplayRootViewFor<ShellViewModel>();
-        }
-
-        protected override object GetInstance(Type service, string key)
-        {
-            return key == null ? _container.Resolve(service) : _container.ResolveNamed(key, service);
-        }
-
-        protected override IEnumerable<object> GetAllInstances(Type service)
-        {
-            var type = typeof(IEnumerable<>).MakeGenericType(service);
-            return _container.Resolve(type) as IEnumerable<object>;
-        }
-
-        protected override void BuildUp(object instance)
-        {
-            _container.InjectProperties(instance);
+            builder.Autobind();
+            builder.AddModules(
+                new WifiModule()
+                , new GeoModule()
+                );
         }
     }
 }
