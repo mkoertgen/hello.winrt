@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using Windows.Devices.Geolocation;
 using Stylet;
 
@@ -27,8 +28,14 @@ namespace hello.winrt.Pages.Geo
             {
                 var position = await _geoService.Locate();
                 Location = new Geopoint(position);
+                await SetMap();
             });
         }
 
+        public async Task SetMap()
+        {
+            var view = (GeoView)View;
+            await view.MapControl.TrySetViewAsync(Location);
+        }
     }
 }

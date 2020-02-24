@@ -1,5 +1,6 @@
 using hello.winrt.Pages;
 using hello.winrt.Pages.Geo;
+using hello.winrt.Pages.Media;
 using hello.winrt.Pages.Wifi;
 using Stylet;
 using StyletIoC;
@@ -17,6 +18,7 @@ namespace hello.winrt
             builder.AddModules(
                 new WifiModule()
                 , new GeoModule()
+                , new MediaModule()
                 );
         }
     }

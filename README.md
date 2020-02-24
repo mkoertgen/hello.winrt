@@ -17,6 +17,10 @@ Using WinRT APIs from a netcore3 WPF application.
 - [How to Turn On or Off Location Access for Desktop apps in Windows 10](https://www.tenforums.com/tutorials/138191-turn-off-location-access-desktop-apps-windows-10-a.html)
 - [Windows 10 desktop apps and privacy](https://support.microsoft.com/en-us/help/4468234/windows-10-desktop-apps-and-privacy)
 
+### MediaPlayer
+
+![MediaPlayer](img/media.png)
+
 ## References
 
 - [Calling Windows 10 APIs From a Desktop Application just got easier](https://blogs.windows.com/windowsdeveloper/2019/04/30/calling-windows-10-apis-from-a-desktop-application-just-got-easier/)
