@@ -21,6 +21,10 @@ Using WinRT APIs from a netcore3 WPF application.
 
 ![MediaPlayer](img/media.png)
 
+### WebView
+
+![Browser](img/web.png)
+
 ## References
 
 - [Calling Windows 10 APIs From a Desktop Application just got easier](https://blogs.windows.com/windowsdeveloper/2019/04/30/calling-windows-10-apis-from-a-desktop-application-just-got-easier/)
@@ -31,3 +35,4 @@ Using WinRT APIs from a netcore3 WPF application.
 - [Xaml Island: Wpf & Windows Forms](https://basta.net/blog/xaml-islands-wpf-und-windows-forms/)
 - Microsoft Docs on [Application Manifests](https://docs.microsoft.com/en-us/windows/win32/sbscs/application-manifests)
 - [Host UWP XAML controls in desktop apps (XAML Islands)](https://docs.microsoft.com/en-us/windows/apps/desktop/modernize/xaml-islands)
+- [Microsoft.Toolkit.Sample.Wpf.App/MainWindow.xaml](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Sample.Wpf.App/MainWindow.xaml)
