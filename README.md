@@ -25,6 +25,19 @@ Using WinRT APIs from a netcore3 WPF application.
 
 ![Browser](img/web.png)
 
+### FFME
+
+[unosquare/ffmediaelement](https://github.com/unosquare/ffmediaelement) FFME: The Advanced WPF MediaElement (based on FFmpeg).
+
+Not really a WinRT Api but just a drop-in replacement for the Wpf built-in [MediaElement](https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.mediaelement)
+
+![FFME](img/ffme.png) ![media-info](img/ffme-info.png)
+
+**NOTE:** You need to have FFmpeg binaries somewhere on your system, e.g.
+
+- `c:\ffmpeg` or
+- `%ChocolateyInstall%\lib\ffmpeg\tools\ffmpeg\bin`
+
 ## References
 
 - [Calling Windows 10 APIs From a Desktop Application just got easier](https://blogs.windows.com/windowsdeveloper/2019/04/30/calling-windows-10-apis-from-a-desktop-application-just-got-easier/)

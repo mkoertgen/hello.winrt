@@ -1,4 +1,5 @@
 using hello.winrt.Pages;
+using hello.winrt.Pages.FFME;
 using hello.winrt.Pages.Geo;
 using hello.winrt.Pages.Media;
 using hello.winrt.Pages.Web;
@@ -21,6 +22,7 @@ namespace hello.winrt
                 , new GeoModule()
                 , new MediaModule()
                 , new WebModule()
+                , new FfmeModule()
                 );
         }
     }
